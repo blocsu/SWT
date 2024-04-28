@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head> 
+    <meta charset="utf-8">
+    <title>Goss Chat</title>
+  </head>
+  <body>
+    <h1>Node.js chat by Ilya Goss!!!</h1>
+
+    
+    <ul id="messages"></ul>
+    <div id="form">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    window.socket = io(); //создать глобальную переменную с сокетом
+    $('button').on('click', () => {
+      socket.emit('chat', $('#m').val()); //послать сообщение серверной части
+      $('#m').val(''); //очистить поле ввода сообщения
+    });
+
+    $('#m').on('keyup', event => {
+       if (event.which == 13) $('button').click();
+    });
+
+    //обработка уведомления от сервера
+    socket.on('chat', msg => {
+       $('#messages').append($('<li>').html(msg));
+    });
+
+  </script>
+    
+  </body>
+</html>

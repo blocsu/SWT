@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./index.js"></script>
+    
+    <script>
+        console.clear();
+       // window.onload=app;
+        window.addEventListener('load', app);
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>Первый</li>
+        <li>Второй</li>
+        <li>Третий</li>
+        <li>Четвёртый</li>
+        <li>Пятый</li>
+    </ul>
+    <div><button>Щелкни</button></div>
+    <script>
+        document.querySelector('button')
+        .addEventListener('click', ({target: e}) => e.textContent = 'Thenkyou');
+    </script>
+</body>
+</html>

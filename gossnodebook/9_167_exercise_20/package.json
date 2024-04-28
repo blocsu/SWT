@@ -1,0 +1,9 @@
+{
+  "name": "9_167_exercise_20",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}
