@@ -1,0 +1,15 @@
+{
+  "name": "execise_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mypack29072022": "https://kodaktor.ru/mypack29072022-1.2.3.tgz"
+  }
+}

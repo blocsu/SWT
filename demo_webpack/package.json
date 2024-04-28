@@ -1,0 +1,14 @@
+{
+  "name": "demo_webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "packageManager": "yarn@4.0.0-rc.51",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
