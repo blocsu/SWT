@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch page</h1>
+    
+    <input id="inp" type="text" name="json" value="">
+    <button id="bt">Click</button>
+
+    <script>
+        document.querySelector('#bt')
+        .addEventListener('click', async e => {
+            const el = document.querySelector('#inp');
+            const text = el.value;
+            const src = await fetch(text).then(x => x.text())
+            el.value = src;
+        })
+    </script>
+</body>
+</html>
