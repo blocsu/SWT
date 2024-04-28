@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Тестирование маршрутов</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+    <script> mocha.setup('bdd'); </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/should.js/13.2.3/should.min.js"></script>
+    <script src="./js/clicker.js"></script>
+    <script src="./js/out.js"></script>
+    <script>
+        async function getEndPoint(URL) {
+            const step1 = fetch(URL, { method: 'PUT' });
+            const step2 = await step1; // Response
+            const { status } = step2;
+            const author = step2.headers.get('author');
+            const result = await step1.then(x => x.text());
+            return { author, result, status };
+        }
+    </script>
+    <script>{
+            const URL = 'http://localhost:7777/header';
+            describe('header', () => {
+                it('маршрут должен возвращать OK', async () => {
+                    const { result } = await getEndPoint(URL);
+                    result.should.equal('OK');
+                });
+                it('статус должен быть равен 201', async () => {
+                    const { status } = await getEndPoint(URL);
+                    status.should.equal(201);
+                });
+                it('заголовок author должен быть равен goss', async () => {
+                    const { author } = await getEndPoint(URL);
+                    author.should.equal('goss');
+                });
+            });
+        }</script>
+</head>
+
+<body>
+    <article>
+        <h1>Тестирование маршрутов </h1>
+        <p>Пусть приложение отвечает на посещение маршрута /header методом PUT, выдавая код ответа 201, заголовок author
+            со значением goss и текст 'OK'</p>
+        <script>
+
+            new Clicker(async () => {
+                // const URL = 'http://localhost:7777/header';
+                // const result = await fetch(URL).then(x => text(x));
+                // out.log(result);
+                mocha.run();
+            }, 'Щёлкни');
+
+        </script>
+    </article>
+    <div id="mocha"></div>
+</body>
+
+</html>

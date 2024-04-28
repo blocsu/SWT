@@ -1,0 +1,1 @@
+((d,s)=>(x=>x.appendChild(d.createTextNode(d.querySelector('title').textContent)))(d.body.appendChild(d.createElement(s))))(document,'h1');
