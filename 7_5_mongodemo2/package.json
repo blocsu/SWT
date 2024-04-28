@@ -1,0 +1,23 @@
+{
+  "name": "mongodemo2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "n run 14.8.0 ."
+  },
+  "dependencies": {
+    "brew": "^0.0.8",
+    "bson": "^6.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helm": "^0.2.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^5.10.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24"
+  }
+}

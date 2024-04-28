@@ -1,0 +1,15 @@
+mongodump --host=mongodemo.kodaktor.ru --db=users --collection=users --viewsAsCollections --out=/Users/dotsenko/01032024
+mongosh mongodemo.kodaktor.ru -u myUserAdmin -p secret --authenticationDatabase admin
+mongosh kodaktor.ru -u mongostudent -p studentmongo --authenticationDatabase admin
+
+mongosh "mongodb+srv://mycluster.abcd1.mongodb.net/myFirstDatabase" --apiVersion 1 --username <username>
+mongosh "mongodb+srv://kodaktor.ru/mongodemo" --username mongostudent -p studentmongo
+
+https://replit.com/@igossoudarev/mongoclient2024#index.js
+
+{ '1': 'openmongo', _id: 6163f5cce4e0156abf07c248 }
+
+admin> db.createUser({user: "reader", pwd: "reader", roles: [{role: "readAnyDatabase", db: "users"}]})
+db.createUser({user: "writer", pwd: "writer", roles: [{role: "readWriteAnyDatabase", db: "users"}]})
+
+db.users.insertOne({login: "reader", password: "reader"});
